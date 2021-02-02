@@ -4,10 +4,6 @@ import 'package:darelist_app/UI/title_section.dart';
 import 'package:darelist_app/database/database.dart';
 import 'package:darelist_app/database/dare_model.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:async';
-
-import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 import 'package:flutter/widgets.dart';
@@ -49,11 +45,11 @@ class MyApp extends StatelessWidget {
               ListView(
                 children: [
                   TitleSection(),
-                  PackSection(1, 'Easy'),
-                  PackSection(1, 'Silly'),
-                  PackSection(2, 'Spicy'),
-                  PackSection(2, 'Naughty'),
-                  PackSection(3, 'Extreme'),
+                  PackSection(1, 'Pack 1'),
+                  PackSection(1, 'Pack 2'),
+                  PackSection(2, 'Pack 3'),
+                  PackSection(2, 'Pack 4'),
+                  PackSection(3, 'Pack 5'),
                 ],
               ),
             ],
