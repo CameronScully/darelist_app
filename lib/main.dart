@@ -4,12 +4,7 @@ import 'package:darelist_app/UI/title_section.dart';
 import 'package:darelist_app/database/database.dart';
 import 'package:darelist_app/database/dare_model.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:async';
-
-import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-
 import 'package:flutter/widgets.dart';
 
 void main() async {
@@ -21,15 +16,15 @@ void main() async {
   final Database db = await initilizeDatabase();
   final List<Map<String, dynamic>> maps = await db.query('dares');
 
-  print( List.generate(maps.length, (i) {
+  print(List.generate(maps.length, (i) {
     return DareModel(
       description: maps[i]['description'],
       difficulty: maps[i]['difficulty'],
       challengeable: maps[i]['challengeable'],
       nsfw: maps[i]['nsfw'],
     );
-  })[0].description
-  );
+  })[0]
+      .description);
 
   runApp(MyApp());
 }

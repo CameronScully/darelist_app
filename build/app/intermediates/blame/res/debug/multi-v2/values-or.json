@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/admin/Documents/GitHub/Darelist_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-or/values-or.xml",
+            "outputFile": "C:\\Users\\CameronScully\\AndroidStudioProjects\\darelist_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
             "map": [
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/7cdc5fc40e4db8ca3403e56d2820f855/core-1.1.0/res/values-or/values-or.xml",
+                    "source": "C:\\Users\\CameronScully\\.gradle\\caches\\transforms-2\\files-2.1\\7cdc5fc40e4db8ca3403e56d2820f855\\core-1.1.0\\res\\values-or\\values-or.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
