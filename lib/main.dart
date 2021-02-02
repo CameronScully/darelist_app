@@ -44,11 +44,11 @@ class MyApp extends StatelessWidget {
               ListView(
                 children: [
                   TitleSection(),
-                  PackSection(1, 'Easy'),
-                  PackSection(1, 'Silly'),
-                  PackSection(2, 'Spicy'),
-                  PackSection(2, 'Naughty'),
-                  PackSection(3, 'Extreme'),
+                  PackSection(1, 'Pack 1'),
+                  PackSection(1, 'Pack 2'),
+                  PackSection(2, 'Pack 3'),
+                  PackSection(2, 'Pack 4'),
+                  PackSection(3, 'Pack 5'),
                 ],
               ),
             ],
