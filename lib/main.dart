@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:flutter/widgets.dart';
 import 'models/pack.dart';
+import 'navigation/pack_route_information_parser.dart';
+import 'navigation/pack_router_delegate.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,48 +36,15 @@ class DarelistApp extends StatefulWidget {
 }
 
 class _DarelistAppState extends State<DarelistApp> {
-  Pack _selectedPack;
+  PackRouterDelegate _routerDelegate = PackRouterDelegate();
+  PackRouteInformationParser _routeInformationParser =
+      PackRouteInformationParser();
 
-  // TODO packs will actually be a collection of dares from the database
-  List<Pack> packs = [
-    Pack('Pack 1'),
-    Pack('Pack 2'),
-    Pack('Pack 3'),
-    Pack('Pack 4'),
-    Pack('Pack 5'),
-  ];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Navigator(
-        pages: [
-          MaterialPage(
-              key: ValueKey('PackListPage'),
-              child: PackListScreen(
-                packs,
-                _handlePackTapped,
-              )),
-          if (_selectedPack != null) PackPage(pack: _selectedPack)
-        ],
-        onPopPage: (route, result) {
-          if (!route.didPop(result)) {
-            return false;
-          }
-
-          // Update the list of pages by setting _selectedBook to null
-          setState(() {
-            _selectedPack = null;
-          });
-
-          return true;
-        },
-      ),
+    return MaterialApp.router(
+      routerDelegate: _routerDelegate,
+      routeInformationParser: _routeInformationParser,
     );
-  }
-
-  void _handlePackTapped(Pack pack) {
-    setState(() {
-      _selectedPack = pack;
-    });
   }
 }

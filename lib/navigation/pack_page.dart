@@ -1,14 +1,12 @@
 import 'package:darelist_app/models/pack.dart';
 import 'package:flutter/material.dart';
 
-import '../UI/packs_screen.dart';
+import '../UI/pack_screen.dart';
 
 class PackPage extends Page {
   final Pack pack;
 
-  PackPage({
-    this.pack,
-  }) : super(key: ValueKey(pack));
+  PackPage(this.pack) : super(key: ValueKey(pack));
 
   Route createRoute(BuildContext context) {
     return MaterialPageRoute(
