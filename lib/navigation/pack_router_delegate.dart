@@ -1,5 +1,5 @@
 import 'package:darelist_app/UI/pack_list_screen.dart';
-import 'package:darelist_app/models/pack.dart';
+import 'package:darelist_app/model/pack.dart';
 import 'package:flutter/material.dart';
 import 'pack_page.dart';
 import 'pack_route_path.dart';

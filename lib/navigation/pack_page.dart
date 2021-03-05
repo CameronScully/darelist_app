@@ -1,4 +1,4 @@
-import 'package:darelist_app/models/pack.dart';
+import 'package:darelist_app/model/pack.dart';
 import 'package:flutter/material.dart';
 
 import '../UI/pack_screen.dart';

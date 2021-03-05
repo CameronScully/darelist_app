@@ -7,7 +7,7 @@ import 'navigation/pack_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:flutter/widgets.dart';
-import 'models/pack.dart';
+import 'model/pack.dart';
 import 'navigation/pack_route_information_parser.dart';
 import 'navigation/pack_router_delegate.dart';
 
