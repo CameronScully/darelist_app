@@ -1,8 +1,12 @@
+import 'package:darelist_app/bloc/dare_bloc.dart';
 import 'package:darelist_app/model/dare.dart';
 import 'package:darelist_app/model/pack.dart';
 import 'package:flutter/material.dart';
 
 class PackScreen extends StatelessWidget {
+  //Initialize our BLoC
+  final DareBloc todoBloc = DareBloc();
+
   final Pack pack;
 
   PackScreen(this.pack);
