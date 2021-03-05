@@ -1,8 +1,8 @@
-import 'package:darelist_app/UI/background.dart';
-import 'package:darelist_app/UI/pack_section.dart';
-import 'package:darelist_app/UI/title_section.dart';
+import 'package:darelist_app/ui/background.dart';
+import 'package:darelist_app/ui/pack_section.dart';
+import 'package:darelist_app/ui/title_section.dart';
 import 'package:darelist_app/database/database.dart';
-import 'UI/pack_list_screen.dart';
+import 'ui/pack_list_screen.dart';
 import 'navigation/pack_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
