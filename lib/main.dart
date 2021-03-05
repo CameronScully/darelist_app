@@ -4,7 +4,6 @@ import 'package:darelist_app/UI/title_section.dart';
 import 'package:darelist_app/database/database.dart';
 import 'UI/pack_list_screen.dart';
 import 'navigation/pack_page.dart';
-import 'file:///C:/Users/CameronScully/AndroidStudioProjects/darelist_app/lib/models/dare.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:flutter/widgets.dart';
