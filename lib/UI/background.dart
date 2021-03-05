@@ -8,9 +8,7 @@ import 'package:geopattern_flutter/patterns/mosaic_squares.dart';
 class Background extends StatelessWidget {
   Color backgroundColor;
 
-  Background(Color backgroundColor) {
-    this.backgroundColor = backgroundColor;
-  }
+  Background(this.backgroundColor);
 
   @override
   Widget build(BuildContext context) {
