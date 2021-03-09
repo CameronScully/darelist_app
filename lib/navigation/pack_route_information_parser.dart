@@ -1,37 +1,38 @@
+import 'package:darelist_app/navigation/ui_pages.dart';
 import 'package:flutter/material.dart';
 
-import 'pack_route_path.dart';
-
-class PackRouteInformationParser extends RouteInformationParser<PackRoutePath> {
+class PackRouteInformationParser
+    extends RouteInformationParser<PageConfiguration> {
   @override
-  Future<PackRoutePath> parseRouteInformation(
+  Future<PageConfiguration> parseRouteInformation(
       RouteInformation routeInformation) async {
     final uri = Uri.parse(routeInformation.location);
-    print(uri.pathSegments.length);
-    if (uri.pathSegments.length == 0) {
-      return PackRoutePath.home();
+
+    if (uri.pathSegments.isEmpty) {
+      return PackListPageConfig;
     }
 
-    if (uri.pathSegments.length == 2) {
-      if (uri.pathSegments[0] != 'pack') return PackRoutePath.unknown();
-      var remaining = uri.pathSegments[1];
-      var id = int.tryParse(remaining);
-      if (id == null) return PackRoutePath.unknown();
-      return PackRoutePath.details(id);
-    }
+    final path = uri.pathSegments[0];
 
-    // Handle unknown routes
-    return PackRoutePath.unknown();
+    switch (path) {
+      case PackListPath:
+        return PackListPageConfig;
+      case DarePath:
+        return DarePageConfig;
+      default:
+        return PackListPageConfig;
+    }
   }
 
   @override
-  RouteInformation restoreRouteInformation(PackRoutePath path) {
-    if (path.isPackListPage) {
-      return RouteInformation(location: '/');
+  RouteInformation restoreRouteInformation(PageConfiguration configuration) {
+    switch (configuration.uiPage) {
+      case Pages.PackList:
+        return const RouteInformation(location: PackListPath);
+      case Pages.Dare:
+        return const RouteInformation(location: DarePath);
+      default:
+        return const RouteInformation(location: PackListPath);
     }
-    if (path.isPackPage) {
-      return RouteInformation(location: '/pack/${path.id}');
-    }
-    return null;
   }
 }

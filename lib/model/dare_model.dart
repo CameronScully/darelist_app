@@ -1,18 +1,18 @@
-class Dare {
+class DareModel {
   int id;
   final String description;
   final int difficulty;
   final bool challengeable;
   final bool nsfw;
 
-  Dare(
+  DareModel(
       {this.id,
       this.description,
       this.difficulty,
       this.challengeable,
       this.nsfw});
 
-  factory Dare.fromDatabaseJson(Map<String, dynamic> data) => Dare(
+  factory DareModel.fromDatabaseJson(Map<String, dynamic> data) => DareModel(
         //This will be used to convert JSON objects that
         //are coming from querying the database and converting
         //it into a Todo object

@@ -1,18 +1,13 @@
-import 'package:darelist_app/bloc/dare_bloc.dart';
-import 'package:darelist_app/model/dare.dart';
 import 'package:darelist_app/model/pack.dart';
 import 'package:flutter/material.dart';
 
-class PackScreen extends StatelessWidget {
-  //Initialize our BLoC
-  final DareBloc todoBloc = DareBloc();
-
-  final Pack pack;
-
-  PackScreen(this.pack);
+class DareWidget extends StatelessWidget {
+  final String dareText;
 
   //TODO dynamically set colors from a random master pallete
-  Color backgroundColor = Colors.white;
+  final Color backgroundColor = Colors.white;
+
+  DareWidget(this.dareText);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +52,7 @@ class PackScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Dare text',
+                    dareText,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,

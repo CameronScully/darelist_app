@@ -1,7 +1,6 @@
-
 import 'dart:async';
 
-import 'package:darelist_app/model/dare.dart';
+import 'package:darelist_app/model/dare_model.dart';
 import 'package:darelist_app/repository/dare_repository.dart';
 
 class DareBloc {
@@ -12,7 +11,7 @@ class DareBloc {
   //the state of our stream of data like adding
   //new data, change the state of the stream
   //and broadcast it to observers/subscribers
-  final _dareController = StreamController<List<Dare>>.broadcast();
+  final _dareController = StreamController<List<DareModel>>.broadcast();
 
   get dares => _dareController.stream;
 
