@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
 const String PackListPath = '/packList';
-const String DarePath = '/dare';
+const String PackPath = '/pack';
 
-enum Pages { PackList, Dare }
+enum Pages { PackList, Pack }
 
 class PageConfiguration {
   final String key;
@@ -17,5 +17,5 @@ class PageConfiguration {
 const PageConfiguration PackListPageConfig = PageConfiguration(
     key: 'PackList', path: PackListPath, uiPage: Pages.PackList);
 
-const PageConfiguration DarePageConfig =
-    PageConfiguration(key: 'Dare', path: DarePath, uiPage: Pages.Dare);
+const PageConfiguration PackPageConfig =
+    PageConfiguration(key: 'Pack', path: PackPath, uiPage: Pages.Pack);

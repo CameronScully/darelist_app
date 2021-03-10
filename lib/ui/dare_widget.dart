@@ -9,6 +9,10 @@ class DareWidget extends StatelessWidget {
 
   DareWidget(this.dareText);
 
+  factory DareWidget.fromMap(Map<String, dynamic> data) => new DareWidget(
+        data['description'],
+      );
+
   @override
   Widget build(BuildContext context) {
     return Container(

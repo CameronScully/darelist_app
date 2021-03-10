@@ -17,8 +17,8 @@ class PackRouteInformationParser
     switch (path) {
       case PackListPath:
         return PackListPageConfig;
-      case DarePath:
-        return DarePageConfig;
+      case PackPath:
+        return PackPageConfig;
       default:
         return PackListPageConfig;
     }
@@ -29,8 +29,8 @@ class PackRouteInformationParser
     switch (configuration.uiPage) {
       case Pages.PackList:
         return const RouteInformation(location: PackListPath);
-      case Pages.Dare:
-        return const RouteInformation(location: DarePath);
+      case Pages.Pack:
+        return const RouteInformation(location: PackPath);
       default:
         return const RouteInformation(location: PackListPath);
     }

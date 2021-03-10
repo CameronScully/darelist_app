@@ -1,3 +1,10 @@
+import 'dart:convert';
+
+DareModel dareFromJson(String str) {
+  final jsonData = json.decode(str);
+  return DareModel.fromMap(jsonData);
+}
+
 class DareModel {
   int id;
   final String description;
@@ -12,27 +19,11 @@ class DareModel {
       this.challengeable,
       this.nsfw});
 
-  factory DareModel.fromDatabaseJson(Map<String, dynamic> data) => DareModel(
-        //This will be used to convert JSON objects that
-        //are coming from querying the database and converting
-        //it into a Todo object
+  factory DareModel.fromMap(Map<String, dynamic> data) => new DareModel(
         id: data['id'],
         description: data['description'],
         difficulty: data['difficulty'],
-        //Since sqlite doesn't have boolean type for true/false
-        //we will 0 to denote that it is false
-        //and 1 for true
         challengeable: data['challengeable'] == 0 ? false : true,
         nsfw: data['nsfw'] == 0 ? false : true,
       );
-
-  // Convert a dare into a Map. The keys must correspond to the names of the
-  // columns in the database.
-  Map<String, dynamic> toDatabaseJson() => {
-        'id': id,
-        'description': description,
-        'difficulty': difficulty,
-        'challengeable': challengeable,
-        'nsfw': nsfw
-      };
 }
