@@ -1,5 +1,4 @@
 import 'package:darelist_app/database/database_provider.dart';
-import 'package:darelist_app/model/dare_model.dart';
 import 'package:darelist_app/ui/dare_widget.dart';
 import 'package:flutter/material.dart';
 

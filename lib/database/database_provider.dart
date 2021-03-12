@@ -1,9 +1,9 @@
 import 'dart:io';
-import 'package:darelist_app/model/dare_model.dart';
-import 'package:darelist_app/ui/dare_widget.dart';
-import 'package:path/path.dart';
 import 'dart:typed_data';
+
+import 'package:darelist_app/ui/dare_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseProvider {

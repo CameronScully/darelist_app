@@ -17,7 +17,13 @@ class PackList extends StatelessWidget {
   Widget build(BuildContext context) {
     final delegate = Get.find<DarelistRouterDelegate>();
 
-    List<Pack> packs = [Pack("pack one"), Pack("pack two")];
+    List<Pack> packs = [
+      Pack("Friendly Pack"),
+      Pack("Party Pack"),
+      Pack("Challenge Pack"),
+      Pack("Spicy Pack"),
+      Pack("Impossible Pack")
+    ];
 
     return Scaffold(
       backgroundColor: this.backgroundColor,

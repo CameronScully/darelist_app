@@ -1,6 +1,4 @@
 import 'package:darelist_app/navigation/ui_pages.dart';
-import 'package:darelist_app/ui/dare_widget.dart';
-import 'package:darelist_app/ui/pack.dart';
 import 'package:darelist_app/ui/pack_list.dart';
 import 'package:flutter/material.dart';
 

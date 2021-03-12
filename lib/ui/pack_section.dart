@@ -35,10 +35,6 @@ class PackSection extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.red[900].withOpacity(0.8),
-                offset: Offset(0, 15),
-              ),
-              BoxShadow(
                 color: Colors.grey[200],
                 offset: Offset(0, 10),
               ),
