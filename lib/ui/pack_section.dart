@@ -35,10 +35,6 @@ class PackSection extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.red[900].withOpacity(0.8),
-                offset: Offset(0, 15),
-              ),
-              BoxShadow(
                 color: Colors.grey[200],
                 offset: Offset(0, 10),
               ),
@@ -57,15 +53,8 @@ class PackSection extends StatelessWidget {
             ],
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                padding: EdgeInsets.only(top: 10, right: 10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: _chilliRating(),
-                ),
-              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -80,6 +69,14 @@ class PackSection extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              Container(
+                //padding: EdgeInsets.only(top: 10, right: 10, bottom: 10),
+                child: Row(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _chilliRating(),
+                ),
               ),
             ],
           ),

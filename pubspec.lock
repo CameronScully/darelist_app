@@ -90,6 +90,13 @@ packages:
       url: "git://github.com/suyash/geopattern"
     source: git
     version: "0.1.1"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.26.0"
   matcher:
     dependency: transitive
     description:
@@ -136,7 +143,7 @@ packages:
       name: sqflite_common
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0+1"
+    version: "2.0.0+2"
   stack_trace:
     dependency: transitive
     description:
