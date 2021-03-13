@@ -87,10 +87,16 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-     - assets/images/chilli.png
-     - assets/database.db
+    - assets/images/chilli.png
+    - assets/database.db
 
   fonts:
     - family: Lobster
       fonts:
-        - asset: assets/fonts/Lobster.otf
+          - asset: assets/fonts/Lobster.otf
+    - family: RanchersRegular
+      fonts:
+          - asset: assets/fonts/Ranchers-Regular.ttf
+    - family: RedressedRegular
+      fonts:
+          - asset: assets/fonts/Redressed-Regular.ttf

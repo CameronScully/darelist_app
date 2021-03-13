@@ -18,11 +18,11 @@ class PackList extends StatelessWidget {
     final delegate = Get.find<DarelistRouterDelegate>();
 
     List<Pack> packs = [
-      Pack("Friendly Pack"),
-      Pack("Party Pack"),
-      Pack("Challenge Pack"),
-      Pack("Spicy Pack"),
-      Pack("Impossible Pack")
+      Pack("Friendly Pack", 1),
+      Pack("Party Pack", 2),
+      Pack("Challenge Pack", 3),
+      Pack("Spicy Pack", 4),
+      Pack("Impossible Pack", 5)
     ];
 
     return Scaffold(
@@ -36,7 +36,7 @@ class PackList extends StatelessWidget {
               for (var pack in packs)
                 GestureDetector(
                   onTap: () => delegate.pushWidget(pack, PackPageConfig),
-                  child: PackSection(1, pack.name),
+                  child: PackSection(pack.difficulty, pack.name),
                 ),
             ],
           ),

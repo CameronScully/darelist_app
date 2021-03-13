@@ -53,15 +53,8 @@ class PackSection extends StatelessWidget {
             ],
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                padding: EdgeInsets.only(top: 10, right: 10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: _chilliRating(),
-                ),
-              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -76,6 +69,14 @@ class PackSection extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              Container(
+                //padding: EdgeInsets.only(top: 10, right: 10, bottom: 10),
+                child: Row(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _chilliRating(),
+                ),
               ),
             ],
           ),

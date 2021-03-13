@@ -50,4 +50,12 @@ class DatabaseProvider {
         res.map((dares) => DareWidget.fromMap(dares)).toList();
     return list;
   }
+
+  Future<List<DareWidget>> getDares(int difficulty) async {
+    final db = await database;
+    var res = await db.rawQuery("SELECT * FROM dares WHERE difficulty = ${difficulty}");
+    List<DareWidget> list =
+    res.map((dares) => DareWidget.fromMap(dares)).toList();
+    return list;
+  }
 }
