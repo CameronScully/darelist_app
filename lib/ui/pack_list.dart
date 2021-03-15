@@ -10,9 +10,6 @@ import 'dare_widget.dart';
 import 'pack_section.dart';
 
 class PackList extends StatelessWidget {
-  //TODO dynamically set colors from a random master pallete
-  final Color backgroundColor = Colors.blue;
-
   @override
   Widget build(BuildContext context) {
     final delegate = Get.find<DarelistRouterDelegate>();
@@ -25,14 +22,20 @@ class PackList extends StatelessWidget {
       Pack("Impossible Pack", 5)
     ];
 
-    return Scaffold(
-      backgroundColor: this.backgroundColor,
-      body: Stack(
-        children: [
-          Background(this.backgroundColor),
-          ListView(
+    return Stack(
+      children: [
+        Background(),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: ListView(
             children: [
-              TitleSection(),
+              AppBar(
+                title: TitleSection(),
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+                centerTitle: true,
+                toolbarHeight: MediaQuery.of(context).size.height * 0.25,
+              ),
               for (var pack in packs)
                 GestureDetector(
                   onTap: () => delegate.pushWidget(pack, PackPageConfig),
@@ -40,8 +43,8 @@ class PackList extends StatelessWidget {
                 ),
             ],
           ),
-        ],
-      ),
+        )
+      ],
     );
   }
 }

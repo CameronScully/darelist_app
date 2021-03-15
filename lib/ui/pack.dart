@@ -18,18 +18,25 @@ class Pack extends StatelessWidget {
         future: DatabaseProvider.db.getDares(difficulty),
         builder: (context, AsyncSnapshot<List<DareWidget>> snapshot) {
           if (snapshot.hasData) {
-            return Scaffold(
-                backgroundColor: Colors.blue,
-                body: Stack(
-                  children: [
-                    Background(Colors.blue),
-                    TitleSection(),
-                    PageView(
-                        scrollDirection: Axis.horizontal,
-                        controller: controller,
-                        children: snapshot.data)
-                  ],
-                ));
+            return Stack(
+              children: [
+                Background(),
+                Scaffold(
+                  appBar: AppBar(
+                    title: TitleSection(),
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    centerTitle: true,
+                    toolbarHeight: MediaQuery.of(context).size.height * 0.25,
+                  ),
+                  backgroundColor: Colors.transparent,
+                  body: PageView(
+                      scrollDirection: Axis.horizontal,
+                      controller: controller,
+                      children: snapshot.data),
+                )
+              ],
+            );
           } else {
             return CircularProgressIndicator();
           }

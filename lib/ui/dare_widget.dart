@@ -58,7 +58,7 @@ class DareWidget extends StatelessWidget {
                           dareText,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontFamily: 'RanchersRegular',
+                            //fontFamily: 'RanchersRegular',
                             color: Colors.white,
                             fontSize: 30,
                           ),

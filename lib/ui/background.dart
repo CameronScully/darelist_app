@@ -6,10 +6,6 @@ import 'package:geopattern_flutter/geopattern_flutter.dart';
 import 'package:geopattern_flutter/patterns/mosaic_squares.dart';
 
 class Background extends StatelessWidget {
-  Color backgroundColor;
-
-  Background(this.backgroundColor);
-
   @override
   Widget build(BuildContext context) {
     final hash = sha1.convert(utf8.encode("flutter")).toString();
