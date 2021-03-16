@@ -2,7 +2,6 @@ import 'package:darelist_app/database/database_provider.dart';
 import 'package:darelist_app/ui/dare_widget.dart';
 import 'package:darelist_app/ui/title_section.dart';
 import 'package:flutter/material.dart';
-
 import 'background.dart';
 
 class Pack extends StatelessWidget {
@@ -28,6 +27,10 @@ class Pack extends StatelessWidget {
                     shadowColor: Colors.transparent,
                     centerTitle: true,
                     toolbarHeight: MediaQuery.of(context).size.height * 0.25,
+                    leading: IconButton(
+                      icon: Icon(Icons.arrow_back_rounded, size: 40),
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
                   ),
                   backgroundColor: Colors.transparent,
                   body: PageView(
