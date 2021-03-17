@@ -52,7 +52,7 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
   MaterialPage _createPage(Widget child, PageConfiguration pageConfig) {
     return MaterialPage(
         child: child,
-        key: Key(pageConfig.key),
+        key: ValueKey(pageConfig.key),
         name: pageConfig.path,
         arguments: pageConfig);
   }
@@ -104,13 +104,6 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
 
   void pushWidget(Widget child, PageConfiguration newRoute) {
     _addPageData(child, newRoute);
-    notifyListeners();
-  }
-
-  void pushWidgets(List<Widget> children, PageConfiguration newRoute) {
-    for (var child in children) {
-      _addPageData(child, newRoute);
-    }
     notifyListeners();
   }
 
