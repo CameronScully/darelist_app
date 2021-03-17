@@ -1,3 +1,4 @@
+import 'package:darelist_app/themes/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -28,6 +29,7 @@ class _DarelistAppState extends State<DarelistApp> {
     return MaterialApp.router(
       routerDelegate: delegate,
       routeInformationParser: parser,
+      theme: CustomTheme.lightTheme,
     );
   }
 }
