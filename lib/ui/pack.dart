@@ -1,6 +1,6 @@
 import 'package:darelist_app/database/database_provider.dart';
-import 'package:darelist_app/ui/dare_widget.dart';
-import 'package:darelist_app/ui/title_section.dart';
+import 'package:darelist_app/UI/dare_widget.dart';
+import 'package:darelist_app/UI/title_section.dart';
 import 'package:flutter/material.dart';
 import 'background.dart';
 
@@ -10,6 +10,7 @@ class Pack extends StatelessWidget {
 
   Pack(this.name, this.difficulty);
 
+  @override
   Widget build(BuildContext context) {
     final controller = PageController(initialPage: 0);
 

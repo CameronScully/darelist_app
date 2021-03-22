@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:darelist_app/ui/dare_widget.dart';
+import 'package:darelist_app/UI/dare_widget.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
@@ -53,9 +53,10 @@ class DatabaseProvider {
 
   Future<List<DareWidget>> getDares(int difficulty) async {
     final db = await database;
-    var res = await db.rawQuery("SELECT * FROM dares WHERE difficulty = ${difficulty}");
+    var res = await db
+        .rawQuery("SELECT * FROM dares WHERE difficulty = ${difficulty}");
     List<DareWidget> list =
-    res.map((dares) => DareWidget.fromMap(dares)).toList();
+        res.map((dares) => DareWidget.fromMap(dares)).toList();
     return list;
   }
 }
