@@ -14,15 +14,28 @@ class PackList extends StatelessWidget {
   Widget build(BuildContext context) {
     final delegate = Get.find<DarelistRouterDelegate>();
 
-    //get dares for each pack
-    Future<List<DareWidget>> pack1Dares = DatabaseProvider.db.getAllDares();
+    /*
+    Pack should be something like
+    drinking
+    sexy
+    friendly
+    challenging
+     */
 
+    //Future<List<DareWidget>> pack1Dares = DatabaseProvider.db.getDares("Friendly Pack");
+    Future<List<DareWidget>> pack1Dares = DatabaseProvider.db.getDares(1);
+    Future<List<DareWidget>> pack2Dares = DatabaseProvider.db.getDares(2);
+    Future<List<DareWidget>> pack3Dares = DatabaseProvider.db.getDares(3);
+    Future<List<DareWidget>> pack4Dares = DatabaseProvider.db.getDares(4);
+    Future<List<DareWidget>> pack5Dares = DatabaseProvider.db.getDares(5);
+
+    //difficulty and name need to be hardcoded so that they load before db dares
     List<Pack> packs = [
-      Pack("Friendly Pack", 1),
-      Pack("Party Pack", 2),
-      Pack("Challenge Pack", 3),
-      Pack("Spicy Pack", 4),
-      Pack("Impossible Pack", 5)
+      Pack("Friendly Pack", 1, pack1Dares),
+      Pack("Party Pack", 2, pack2Dares),
+      Pack("Challenge Pack", 3, pack3Dares),
+      Pack("Spicy Pack", 4, pack4Dares),
+      Pack("Impossible Pack", 5, pack5Dares)
     ];
 
     return Stack(

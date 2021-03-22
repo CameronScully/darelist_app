@@ -7,15 +7,16 @@ import 'background.dart';
 class Pack extends StatelessWidget {
   final String name;
   final int difficulty;
+  final Future<List<DareWidget>> dares;
 
-  Pack(this.name, this.difficulty);
+  Pack(this.name, this.difficulty, this.dares);
 
   @override
   Widget build(BuildContext context) {
     final controller = PageController(initialPage: 0);
 
     return FutureBuilder<List<DareWidget>>(
-        future: DatabaseProvider.db.getDares(difficulty),
+        future: dares,
         builder: (context, AsyncSnapshot<List<DareWidget>> snapshot) {
           if (snapshot.hasData) {
             return Stack(

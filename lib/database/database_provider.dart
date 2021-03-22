@@ -51,12 +51,17 @@ class DatabaseProvider {
     return list;
   }
 
+  //should be given back in a random order
   Future<List<DareWidget>> getDares(int difficulty) async {
+    print("getDares called");
     final db = await database;
     var res = await db
         .rawQuery("SELECT * FROM dares WHERE difficulty = ${difficulty}");
     List<DareWidget> list =
         res.map((dares) => DareWidget.fromMap(dares)).toList();
+
+    list.shuffle();
+
     return list;
   }
 }
