@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:geopattern_flutter/geopattern_flutter.dart';
 import 'package:geopattern_flutter/patterns/mosaic_squares.dart';
 
+//canvas.drawColor(background, BlendMode.dstOver);
+
 class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

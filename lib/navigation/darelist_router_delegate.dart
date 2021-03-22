@@ -1,17 +1,20 @@
+import 'package:darelist_app/UI/pack.dart';
 import 'package:darelist_app/navigation/ui_pages.dart';
-import 'package:darelist_app/ui/pack_list.dart';
 import 'package:flutter/material.dart';
+
+import 'pack_list_page.dart';
+import 'pack_page.dart';
 
 class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<PageConfiguration> {
   final List<Page> _pages = [];
+  final GlobalKey<NavigatorState> navigatorKey;
+
+  DarelistRouterDelegate() : navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   PageConfiguration get currentConfiguration =>
       _pages.last.arguments as PageConfiguration;
-
-  @override
-  GlobalKey<NavigatorState> get navigatorKey => GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +43,7 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
     notifyListeners();
   }
 
+  /*
   @override
   Future<bool> popRoute() {
     if (_pages.length > 1) {
@@ -48,13 +52,10 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
     }
     return Future.value(false);
   }
+   */
 
   MaterialPage _createPage(Widget child, PageConfiguration pageConfig) {
-    return MaterialPage(
-        child: child,
-        key: ValueKey(pageConfig.key),
-        name: pageConfig.path,
-        arguments: pageConfig);
+    return MaterialPage(child: child, key: ValueKey(child));
   }
 
   void _addPageData(Widget child, PageConfiguration pageConfig) {
@@ -71,7 +72,9 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
     if (shouldAddPage) {
       switch (pageConfig.uiPage) {
         case Pages.PackList:
-          _addPageData(PackList(), PackListPageConfig);
+          _pages.add(
+            PackListPage(),
+          );
           break;
         default:
           break;
@@ -104,6 +107,12 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
 
   void pushWidget(Widget child, PageConfiguration newRoute) {
     _addPageData(child, newRoute);
+    notifyListeners();
+  }
+
+  //test if we can push a pack page to override animation
+  void pushPack(Pack pack) {
+    _pages.add(PackPage(pack));
     notifyListeners();
   }
 
