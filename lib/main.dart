@@ -2,6 +2,7 @@ import 'package:darelist_app/themes/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+
 import 'navigation/darelist_router_delegate.dart';
 import 'navigation/pack_route_information_parser.dart';
 import 'navigation/ui_pages.dart';
@@ -29,7 +30,7 @@ class _DarelistAppState extends State<DarelistApp> {
     return MaterialApp.router(
       routerDelegate: delegate,
       routeInformationParser: parser,
-      theme: CustomTheme.lightTheme,
+      theme: CustomTheme.Theme1,
     );
   }
 }

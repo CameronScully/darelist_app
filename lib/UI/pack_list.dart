@@ -1,13 +1,12 @@
+import 'package:darelist_app/UI/background.dart';
+import 'package:darelist_app/UI/dare_widget.dart';
 import 'package:darelist_app/UI/pack.dart';
+import 'package:darelist_app/UI/pack_section.dart';
 import 'package:darelist_app/UI/title_section.dart';
 import 'package:darelist_app/database/database_provider.dart';
 import 'package:darelist_app/navigation/darelist_router_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'background.dart';
-import 'dare_widget.dart';
-import 'pack_section.dart';
 
 class PackList extends StatelessWidget {
   @override

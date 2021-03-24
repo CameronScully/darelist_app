@@ -34,7 +34,7 @@ class DareWidget extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.blue[700],
+          color: Theme.of(context).cardColor,
           borderRadius: new BorderRadius.all(Radius.circular(20.0)),
           border: Border.all(
             color: Colors.white,

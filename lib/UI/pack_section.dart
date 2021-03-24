@@ -29,7 +29,7 @@ class PackSection extends StatelessWidget {
           left: width * 0.04, right: width * 0.04, bottom: width * 0.04),
       height: width * 0.20,
       decoration: BoxDecoration(
-        color: Colors.blue[700],
+        color: Theme.of(context).cardColor,
         borderRadius: new BorderRadius.all(Radius.circular(20.0)),
         border: Border.all(
           color: Colors.white,

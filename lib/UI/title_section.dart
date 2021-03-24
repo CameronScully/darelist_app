@@ -16,7 +16,7 @@ class TitleSection extends StatelessWidget {
             foreground: Paint()
               ..style = PaintingStyle.stroke
               ..strokeWidth = 10
-              ..color = Colors.blue[700],
+              ..color = Theme.of(context).primaryColor,
           ),
         ),
         Text(

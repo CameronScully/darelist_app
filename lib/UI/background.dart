@@ -15,7 +15,7 @@ class Background extends StatelessWidget {
       final pattern = MosaicSquares.fromHash(hash);
       return CustomPaint(
           size: Size(constraints.maxWidth, constraints.maxHeight),
-          painter: FullPainter(pattern: pattern, background: Colors.red));
+          painter: FullPainter(pattern: pattern, background: Theme.of(context).backgroundColor));
     });
   }
 }
