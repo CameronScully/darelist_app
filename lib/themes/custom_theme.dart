@@ -8,88 +8,192 @@ class CustomTheme {
       backgroundColor: Palette1.color3,
       primaryColor: Palette1.color1,
       cardColor: Palette1.color2,
-      buttonColor: Palette1.color4,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette1.color4,
+          onPrimary: Palette1.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
+      textTheme: TextTheme(
+        bodyText1: TextStyle(
+            color: Palette1.color2.computeLuminance() > 0.5
+                ? Colors.black
+                : Colors.white,
+            fontFamily: 'RanchersRegular',
+            fontSize: 30),
+      ),
     );
   }
 
   static ThemeData get Theme2 {
     return ThemeData(
-      backgroundColor: Palette2.color1,
-      primaryColor: Palette2.color2,
-      cardColor: Palette2.color3,
-      accentColor: Palette2.color4,
+      backgroundColor: Palette2.color4,
+      primaryColor: Palette2.color3,
+      cardColor: Palette2.color2,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette2.color1,
+          onPrimary: Palette2.color1.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
+      textTheme: TextTheme(
+        bodyText1: TextStyle(
+            color: Palette2.color2.computeLuminance() > 0.5
+                ? Colors.black
+                : Colors.white,
+            fontFamily: 'RanchersRegular',
+            fontSize: 30),
+      ),
     );
   }
 
   static ThemeData get Theme3 {
     return ThemeData(
-      backgroundColor: Palette3.color1,
-      primaryColor: Palette3.color2,
+      backgroundColor: Palette3.color4,
+      primaryColor: Palette3.color1,
       cardColor: Palette3.color3,
-      accentColor: Palette3.color4,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette3.color2,
+          onPrimary: Palette3.color2.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
+      textTheme: TextTheme(
+        bodyText1: TextStyle(
+            color: Palette3.color3.computeLuminance() > 0.5
+                ? Colors.black
+                : Colors.white,
+            fontFamily: 'RanchersRegular',
+            fontSize: 30),
+      ),
     );
   }
 
   static ThemeData get Theme4 {
+    Color cardColor = Palette4.color2;
+
     return ThemeData(
-      backgroundColor: Palette4.color1,
-      primaryColor: Palette4.color2,
-      cardColor: Palette4.color3,
-      accentColor: Palette4.color4,
+      backgroundColor: Palette4.color3,
+      primaryColor: Palette4.color1,
+      cardColor: cardColor,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette4.color4,
+          onPrimary: Palette4.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
+      textTheme: TextTheme(
+        bodyText1: TextStyle(
+            color: cardColor.computeLuminance() > 0.5
+                ? Colors.black
+                : Colors.white,
+            fontFamily: 'RanchersRegular',
+            fontSize: 30),
+      ),
     );
   }
 
   static ThemeData get Theme5 {
     return ThemeData(
-      backgroundColor: Palette5.color1,
-      primaryColor: Palette5.color2,
-      cardColor: Palette5.color3,
-      accentColor: Palette5.color4,
+      backgroundColor: Palette5.color3,
+      primaryColor: Palette5.color1,
+      cardColor: Palette5.color2,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette5.color4,
+          onPrimary: Palette5.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
     );
   }
 
   static ThemeData get Theme6 {
     return ThemeData(
-      backgroundColor: Palette6.color1,
-      primaryColor: Palette6.color2,
-      cardColor: Palette6.color3,
-      accentColor: Palette6.color4,
+      backgroundColor: Palette6.color3,
+      primaryColor: Palette6.color1,
+      cardColor: Palette6.color2,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette6.color4,
+          onPrimary: Palette6.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
     );
   }
 
   static ThemeData get Theme7 {
     return ThemeData(
-      backgroundColor: Palette7.color1,
-      primaryColor: Palette7.color2,
-      cardColor: Palette7.color3,
-      accentColor: Palette7.color4,
+      backgroundColor: Palette7.color3,
+      primaryColor: Palette7.color1,
+      cardColor: Palette7.color2,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette7.color4,
+          onPrimary: Palette7.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
     );
   }
 
   static ThemeData get Theme8 {
     return ThemeData(
-      backgroundColor: Palette8.color1,
-      primaryColor: Palette8.color2,
-      cardColor: Palette8.color3,
-      accentColor: Palette8.color4,
+      backgroundColor: Palette8.color3,
+      primaryColor: Palette8.color1,
+      cardColor: Palette8.color2,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette8.color4,
+          onPrimary: Palette8.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
     );
   }
 
   static ThemeData get Theme9 {
     return ThemeData(
-      backgroundColor: Palette9.color1,
-      primaryColor: Palette9.color2,
-      cardColor: Palette9.color3,
-      accentColor: Palette9.color4,
+      backgroundColor: Palette9.color3,
+      primaryColor: Palette9.color1,
+      cardColor: Palette9.color2,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette9.color4,
+          onPrimary: Palette9.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
     );
   }
 
   static ThemeData get Theme10 {
     return ThemeData(
-      backgroundColor: Palette10.color1,
-      primaryColor: Palette10.color2,
-      cardColor: Palette10.color3,
-      accentColor: Palette10.color4,
+      backgroundColor: Palette10.color3,
+      primaryColor: Palette10.color1,
+      cardColor: Palette10.color2,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Palette10.color4,
+          onPrimary: Palette10.color4.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
+        ),
+      ),
     );
   }
 }

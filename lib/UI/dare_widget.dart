@@ -4,9 +4,6 @@ class DareWidget extends StatelessWidget {
   final String dareText;
   final int difficulty;
 
-  //TODO dynamically set colors from a random master pallete
-  final Color backgroundColor = Colors.white;
-
   DareWidget(this.dareText, this.difficulty);
 
   factory DareWidget.fromMap(Map<String, dynamic> data) => new DareWidget(
@@ -57,12 +54,36 @@ class DareWidget extends StatelessWidget {
                     child: Text(
                       dareText,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'RanchersRegular',
-                        color: Colors.white,
-                        fontSize: width * 0.04,
-                      ),
-                    )))
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ))),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ElevatedButton(onPressed: () {}, child: Text('PASS'))
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      ElevatedButton(onPressed: () {}, child: Text('FAIL'))
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ));
   }
