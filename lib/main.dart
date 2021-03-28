@@ -30,7 +30,7 @@ class _DarelistAppState extends State<DarelistApp> {
     return MaterialApp.router(
       routerDelegate: delegate,
       routeInformationParser: parser,
-      theme: CustomTheme.Theme4,
+      theme: CustomTheme.Theme2,
     );
   }
 }
