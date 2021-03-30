@@ -37,7 +37,8 @@ class Background extends StatelessWidget {
 
       return CustomPaint(
           size: Size(constraints.maxWidth, constraints.maxHeight),
-          painter: FullPainter(pattern: pattern, background: Theme.of(context).backgroundColor));
+          painter: FullPainter(
+              pattern: pattern, background: Theme.of(context).backgroundColor));
     });
   }
 }

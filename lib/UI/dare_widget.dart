@@ -18,16 +18,6 @@ class DareWidget extends StatelessWidget {
         ? MediaQuery.of(context).size.width
         : MediaQuery.of(context).size.height;
 
-    List<Image> _chilliRating() {
-      List<Image> chilli = [];
-      for (int i = 0; i < difficulty; i++) {
-        chilli.add(
-            //height should just be small medium or large
-            Image.asset('assets/images/chilli.png', width: width * 0.05));
-      }
-      return chilli;
-    }
-
     return Container(
         margin: const EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -38,16 +28,9 @@ class DareWidget extends StatelessWidget {
             width: 4,
           ),
         ),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              padding: EdgeInsets.only(top: 10, right: 10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: _chilliRating(),
-              ),
-            ),
             Center(
                 child: Container(
                     padding: const EdgeInsets.all(10),
@@ -56,34 +39,36 @@ class DareWidget extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyText1,
                     ))),
-            Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      ElevatedButton(onPressed: () {}, child: Text('PASS'))
-                    ],
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('PASS'),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.green,
+                        onPrimary: Colors.white,
+                        textStyle: TextStyle(
+                            fontSize: 30, fontFamily: 'RanchersRegular')),
                   )
                 ],
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      ElevatedButton(onPressed: () {}, child: Text('FAIL'))
-                    ],
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('FAIL'),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
+                        onPrimary: Colors.white,
+                        textStyle: TextStyle(
+                            fontSize: 30, fontFamily: 'RanchersRegular')),
                   )
                 ],
-              ),
-            ),
+              )
+            ]),
           ],
         ));
   }

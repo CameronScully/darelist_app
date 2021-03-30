@@ -132,7 +132,7 @@ class CustomTheme {
     return ThemeData(
       backgroundColor: Palette6.color1,
       primaryColor: Palette6.color2,
-      cardColor: Palette6.color2,
+      cardColor: Palette6.color3,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           primary: Palette6.color4,
@@ -142,13 +142,13 @@ class CustomTheme {
         ),
       ),
       textTheme: TextTheme(
-      bodyText1: TextStyle(
-          color: Palette6.color2.computeLuminance() > 0.5
-              ? Colors.black
-              : Colors.white,
-          fontFamily: 'RanchersRegular',
-          fontSize: 30),
-    ),
+        bodyText1: TextStyle(
+            color: Palette6.color2.computeLuminance() > 0.5
+                ? Colors.black
+                : Colors.white,
+            fontFamily: 'RanchersRegular',
+            fontSize: 30),
+      ),
     );
   }
 

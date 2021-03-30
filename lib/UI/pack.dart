@@ -13,7 +13,7 @@ class Pack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 0);
+    final controller = PageController(initialPage: 999);
 
     return FutureBuilder<List<DareWidget>>(
         future: dares,
@@ -35,10 +35,14 @@ class Pack extends StatelessWidget {
                     ),
                   ),
                   backgroundColor: Colors.transparent,
-                  body: PageView(
-                      scrollDirection: Axis.horizontal,
-                      controller: controller,
-                      children: snapshot.data),
+                  body: new PageView.builder(
+                    controller: controller,
+                    itemBuilder: (context, index) {
+                      return new Center(
+                        child: snapshot.data[index % snapshot.data.length],
+                      );
+                    },
+                  ),
                 )
               ],
             );
