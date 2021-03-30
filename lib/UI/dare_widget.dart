@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 class DareWidget extends StatelessWidget {
   final String dareText;
   final int difficulty;
+  final PageController pageController;
 
-  DareWidget(this.dareText, this.difficulty);
+  DareWidget(this.dareText, this.difficulty, this.pageController);
 
-  factory DareWidget.fromMap(Map<String, dynamic> data) => new DareWidget(
+  factory DareWidget.fromMap(
+          Map<String, dynamic> data, PageController pageController) =>
+      new DareWidget(
         data['description'],
         data['difficulty'],
+        pageController,
       );
 
   @override
@@ -44,7 +48,11 @@ class DareWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      pageController.nextPage(
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.easeInOut);
+                    },
                     child: Text('PASS'),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.green,
@@ -58,7 +66,11 @@ class DareWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      pageController.nextPage(
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.easeInOut);
+                    },
                     child: Text('FAIL'),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.red,

@@ -8,13 +8,12 @@ class Pack extends StatelessWidget {
   final String name;
   final int difficulty;
   final Future<List<DareWidget>> dares;
+  final PageController pageController;
 
-  Pack(this.name, this.difficulty, this.dares);
+  Pack(this.name, this.difficulty, this.dares, this.pageController);
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 999);
-
     return FutureBuilder<List<DareWidget>>(
         future: dares,
         builder: (context, AsyncSnapshot<List<DareWidget>> snapshot) {
@@ -36,7 +35,7 @@ class Pack extends StatelessWidget {
                   ),
                   backgroundColor: Colors.transparent,
                   body: new PageView.builder(
-                    controller: controller,
+                    controller: pageController,
                     itemBuilder: (context, index) {
                       return new Center(
                         child: snapshot.data[index % snapshot.data.length],

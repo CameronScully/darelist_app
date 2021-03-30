@@ -12,29 +12,26 @@ class PackList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final delegate = Get.find<DarelistRouterDelegate>();
-
-    /*
-    Pack should be something like
-    drinking
-    sexy
-    friendly
-    challenging
-     */
-
+    final pageController = PageController(initialPage: 999);
     //Future<List<DareWidget>> pack1Dares = DatabaseProvider.db.getDares("Friendly Pack");
-    Future<List<DareWidget>> pack1Dares = DatabaseProvider.db.getDares(1);
-    Future<List<DareWidget>> pack2Dares = DatabaseProvider.db.getDares(2);
-    Future<List<DareWidget>> pack3Dares = DatabaseProvider.db.getDares(3);
-    Future<List<DareWidget>> pack4Dares = DatabaseProvider.db.getDares(4);
-    Future<List<DareWidget>> pack5Dares = DatabaseProvider.db.getDares(5);
+    Future<List<DareWidget>> pack1Dares =
+        DatabaseProvider.db.getDares(1, pageController);
+    Future<List<DareWidget>> pack2Dares =
+        DatabaseProvider.db.getDares(2, pageController);
+    Future<List<DareWidget>> pack3Dares =
+        DatabaseProvider.db.getDares(3, pageController);
+    Future<List<DareWidget>> pack4Dares =
+        DatabaseProvider.db.getDares(4, pageController);
+    Future<List<DareWidget>> pack5Dares =
+        DatabaseProvider.db.getDares(5, pageController);
 
     //difficulty and name need to be hardcoded so that they load before db dares
     List<Pack> packs = [
-      Pack("Friendly Pack", 1, pack1Dares),
-      Pack("Party Pack", 2, pack2Dares),
-      Pack("Challenge Pack", 3, pack3Dares),
-      Pack("Spicy Pack", 4, pack4Dares),
-      Pack("Impossible Pack", 5, pack5Dares)
+      Pack("Friendly Pack", 1, pack1Dares, pageController),
+      Pack("Party Pack", 2, pack2Dares, pageController),
+      Pack("Challenge Pack", 3, pack3Dares, pageController),
+      Pack("Spicy Pack", 4, pack4Dares, pageController),
+      Pack("Impossible Pack", 5, pack5Dares, pageController)
     ];
 
     return Stack(
