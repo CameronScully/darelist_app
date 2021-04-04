@@ -41,7 +41,10 @@ class DareWidget extends StatelessWidget {
                     child: Text(
                       dareText,
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'RanchersRegular',
+                          fontSize: width * 0.04),
                     ))),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               Row(
@@ -58,7 +61,8 @@ class DareWidget extends StatelessWidget {
                         primary: Colors.green,
                         onPrimary: Colors.white,
                         textStyle: TextStyle(
-                            fontSize: 30, fontFamily: 'RanchersRegular')),
+                            fontSize: width * 0.04,
+                            fontFamily: 'RanchersRegular')),
                   )
                 ],
               ),
@@ -76,7 +80,8 @@ class DareWidget extends StatelessWidget {
                         primary: Colors.red,
                         onPrimary: Colors.white,
                         textStyle: TextStyle(
-                            fontSize: 30, fontFamily: 'RanchersRegular')),
+                            fontSize: width * 0.04,
+                            fontFamily: 'RanchersRegular')),
                   )
                 ],
               )
