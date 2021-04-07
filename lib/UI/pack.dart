@@ -20,7 +20,9 @@ class Pack extends StatelessWidget {
           if (snapshot.hasData) {
             return Stack(
               children: [
-                Background(),
+                Container(
+                    color: Theme.of(context).backgroundColor,
+                    child: Background()),
                 Scaffold(
                   appBar: AppBar(
                     title: TitleSection(),

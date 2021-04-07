@@ -36,7 +36,8 @@ class PackList extends StatelessWidget {
 
     return Stack(
       children: [
-        Background(),
+        Container(
+            color: Theme.of(context).backgroundColor, child: Background()),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: ListView(

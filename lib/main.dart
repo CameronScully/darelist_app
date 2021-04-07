@@ -27,6 +27,7 @@ class _DarelistAppState extends State<DarelistApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerDelegate: delegate,
       routeInformationParser: parser,
       theme: ThemeData(
