@@ -13,7 +13,6 @@ class PackList extends StatelessWidget {
   Widget build(BuildContext context) {
     final delegate = Get.find<DarelistRouterDelegate>();
     final pageController = PageController(initialPage: 999);
-    //Future<List<DareWidget>> pack1Dares = DatabaseProvider.db.getDares("Friendly Pack");
     Future<List<DareWidget>> pack1Dares =
         DatabaseProvider.db.getDares(1, pageController);
     Future<List<DareWidget>> pack2Dares =
