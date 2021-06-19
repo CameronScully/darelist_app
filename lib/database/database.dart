@@ -44,16 +44,6 @@ class DatabaseProvider {
     return await openDatabase(path);
   }
 
-  /*
-  Future<List<DareWidget>> getAllDares() async {
-    final db = await database;
-    var res = await db.query("dares");
-    List<DareWidget> list =
-        res.map((dares) => DareWidget.fromMap(dares)).toList();
-    return list;
-  }
-  */
-
   //should be given back in a random order
   Future<List<DareWidget>> getDares(
       int difficulty, PageController pageController) async {
