@@ -1,7 +1,7 @@
-import 'dares_dao.dart';
+import 'darelist_dao.dart';
 
-class TodoRepository {
-  final todoDao = DaresDao();
+class DarelistRepository {
+  final darelistDao = DarelistDao();
 
-  Future getDaresById(difficulty) => todoDao.getDares(difficulty);
+  Future getDares(int difficulty) => darelistDao.getDares(difficulty);
 }

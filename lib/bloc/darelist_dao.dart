@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:darelist_app/database/database.dart';
 import 'package:darelist_app/model/dare.dart';
 
-class DaresDao {
+class DarelistDao {
   final dbProvider = DatabaseProvider.dbProvider;
 
   // Get dares with x difficulty
@@ -17,6 +17,7 @@ class DaresDao {
     List<Dare> dares = result.isNotEmpty
         ? result.map((item) => Dare.fromDatabaseJson(item)).toList()
         : [];
+
     return dares;
   }
 }

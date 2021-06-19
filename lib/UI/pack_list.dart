@@ -3,7 +3,7 @@ import 'package:darelist_app/UI/dare_widget.dart';
 import 'package:darelist_app/UI/pack.dart';
 import 'package:darelist_app/UI/pack_section.dart';
 import 'package:darelist_app/UI/title_section.dart';
-import 'package:darelist_app/database/database_provider.dart';
+import 'package:darelist_app/database/database.dart';
 import 'package:darelist_app/navigation/darelist_router_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,25 +12,13 @@ class PackList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final delegate = Get.find<DarelistRouterDelegate>();
-    final pageController = PageController(initialPage: 999);
-    Future<List<DareWidget>> pack1Dares =
-        DatabaseProvider.db.getDares(1, pageController);
-    Future<List<DareWidget>> pack2Dares =
-        DatabaseProvider.db.getDares(2, pageController);
-    Future<List<DareWidget>> pack3Dares =
-        DatabaseProvider.db.getDares(3, pageController);
-    Future<List<DareWidget>> pack4Dares =
-        DatabaseProvider.db.getDares(4, pageController);
-    Future<List<DareWidget>> pack5Dares =
-        DatabaseProvider.db.getDares(5, pageController);
 
-    //difficulty and name need to be hardcoded so that they load before db dares
     List<Pack> packs = [
-      Pack("Friendly Pack", 1, pack1Dares, pageController),
-      Pack("Party Pack", 2, pack2Dares, pageController),
-      Pack("Challenge Pack", 3, pack3Dares, pageController),
-      Pack("Spicy Pack", 4, pack4Dares, pageController),
-      Pack("Impossible Pack", 5, pack5Dares, pageController)
+      Pack("Friendly Pack", 1),
+      Pack("Party Pack", 2),
+      Pack("Challenge Pack", 3),
+      Pack("Spicy Pack", 4),
+      Pack("Impossible Pack", 5)
     ];
 
     return Stack(

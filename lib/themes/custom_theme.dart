@@ -21,7 +21,7 @@ class CustomTheme {
             color: Palette1.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -45,7 +45,7 @@ class CustomTheme {
             color: Palette2.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -69,7 +69,7 @@ class CustomTheme {
             color: Palette3.color3.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -98,7 +98,7 @@ class CustomTheme {
             color: cardColor.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -122,7 +122,7 @@ class CustomTheme {
             color: Palette5.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -146,7 +146,7 @@ class CustomTheme {
             color: Palette6.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -170,7 +170,7 @@ class CustomTheme {
             color: Palette7.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -194,7 +194,7 @@ class CustomTheme {
             color: Palette8.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -218,7 +218,7 @@ class CustomTheme {
             color: Palette9.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );
@@ -242,7 +242,7 @@ class CustomTheme {
             color: Palette10.color2.computeLuminance() > 0.5
                 ? Colors.black
                 : Colors.white,
-            fontFamily: 'RanchersRegular',
+            fontFamily: 'Lobster',
             fontSize: 30),
       ),
     );

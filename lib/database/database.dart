@@ -1,16 +1,12 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:darelist_app/UI/dare_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseProvider {
-  DatabaseProvider._();
-
-  static final DatabaseProvider db = DatabaseProvider._();
+  static final DatabaseProvider dbProvider = DatabaseProvider();
 
   static Database _database;
 
@@ -20,7 +16,7 @@ class DatabaseProvider {
     return _database;
   }
 
-  Future<Database> createDatabase() async {
+  createDatabase() async {
     var databasesPath = await getDatabasesPath();
     var path = join(databasesPath, "database.db");
     var exists = await databaseExists(path);
@@ -42,20 +38,5 @@ class DatabaseProvider {
       print("Opening existing database");
     }
     return await openDatabase(path);
-  }
-
-  //should be given back in a random order
-  Future<List<DareWidget>> getDares(
-      int difficulty, PageController pageController) async {
-    print("getDares called");
-    final db = await database;
-    var res = await db
-        .rawQuery("SELECT * FROM dares WHERE difficulty = ${difficulty}");
-    List<DareWidget> list =
-        res.map((dares) => DareWidget.fromMap(dares, pageController)).toList();
-
-    list.shuffle();
-
-    return list;
   }
 }

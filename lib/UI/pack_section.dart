@@ -66,7 +66,7 @@ class PackSection extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
-                    fontFamily: 'RanchersRegular',
+                    fontFamily: 'Lobster',
                     fontSize: width * 0.04),
               ),
             ],
