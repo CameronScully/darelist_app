@@ -2,18 +2,9 @@ import 'package:flutter/material.dart';
 
 class DareWidget extends StatelessWidget {
   final String dareText;
-  final int difficulty;
   final PageController pageController;
 
-  DareWidget(this.dareText, this.difficulty, this.pageController);
-
-  factory DareWidget.fromMap(
-          Map<String, dynamic> data, PageController pageController) =>
-      new DareWidget(
-        data['description'],
-        data['difficulty'],
-        pageController,
-      );
+  DareWidget(this.dareText, this.pageController);
 
   @override
   Widget build(BuildContext context) {
@@ -35,53 +26,42 @@ class DareWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Center(
-                child: Container(
-                    padding: const EdgeInsets.all(10),
-                    child: Text(
-                      dareText,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Lobster',
-                          fontSize: width * 0.04),
-                    ))),
+            Container(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  dareText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Lobster',
+                      fontSize: width * 0.04),
+                )),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      pageController.nextPage(
-                          duration: Duration(milliseconds: 300),
-                          curve: Curves.easeInOut);
-                    },
-                    child: Text('PASS'),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
-                        onPrimary: Colors.white,
-                        textStyle: TextStyle(
-                            fontSize: width * 0.04, fontFamily: 'Lobster')),
-                  )
-                ],
+              ElevatedButton(
+                onPressed: () {
+                  pageController.nextPage(
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut);
+                },
+                child: Text('PASS'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.green,
+                    onPrimary: Colors.black,
+                    textStyle: TextStyle(
+                        fontSize: width * 0.04, fontFamily: 'Lobster')),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      pageController.nextPage(
-                          duration: Duration(milliseconds: 300),
-                          curve: Curves.easeInOut);
-                    },
-                    child: Text('FAIL'),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
-                        onPrimary: Colors.white,
-                        textStyle: TextStyle(
-                            fontSize: width * 0.04, fontFamily: 'Lobster')),
-                  )
-                ],
+              ElevatedButton(
+                onPressed: () {
+                  pageController.nextPage(
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut);
+                },
+                child: Text('FAIL'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    onPrimary: Colors.black,
+                    textStyle: TextStyle(
+                        fontSize: width * 0.04, fontFamily: 'Lobster')),
               )
             ]),
           ],

@@ -27,7 +27,6 @@ class DarelistBloc {
   }
 
   dispose() {
-    print("disposed");
     _dareController.close();
   }
 }

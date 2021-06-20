@@ -22,6 +22,7 @@ class DatabaseProvider {
     var exists = await databaseExists(path);
 
     if (!exists) {
+      //copy existing dare db
       print("Creating new copy from asset");
 
       try {
@@ -37,6 +38,16 @@ class DatabaseProvider {
     } else {
       print("Opening existing database");
     }
-    return await openDatabase(path);
+
+    var database = await openDatabase(path, version: 1, onCreate: initDB);
+    return database;
+  }
+
+  void initDB(Database database, int version) async {
+    print("creating players table");
+    await database.execute("CREATE TABLE players ("
+        "id INTEGER PRIMARY KEY, "
+        "name TEXT"
+        ")");
   }
 }
