@@ -32,9 +32,7 @@ class DarelistDao {
 
     List<Player> players = result.isNotEmpty
         ? result.map((item) => Player.fromDatabaseJson(item)).toList()
-        : [Player(-1, "Player 1"), Player(-1, "Player 2")];
-
-    players.shuffle();
+        : [];
 
     return players;
   }

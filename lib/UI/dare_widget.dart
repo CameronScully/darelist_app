@@ -14,7 +14,7 @@ class DareWidget extends StatelessWidget {
         : MediaQuery.of(context).size.height;
 
     return Container(
-        margin: const EdgeInsets.all(20),
+        margin: EdgeInsets.all(width * 0.04),
         decoration: BoxDecoration(
           color: Theme.of(context).cardColor,
           borderRadius: new BorderRadius.all(Radius.circular(20.0)),

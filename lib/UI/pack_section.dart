@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PackSection extends StatelessWidget {
-  int difficulty;
-  String packName;
+  final int difficulty;
+  final String packName;
 
-  PackSection(int difficulty, String packName) {
-    this.difficulty = difficulty;
-    this.packName = packName;
-  }
+  PackSection(this.difficulty, this.packName);
 
   @override
   Widget build(BuildContext context) {

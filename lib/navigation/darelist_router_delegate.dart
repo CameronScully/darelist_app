@@ -1,4 +1,5 @@
 import 'package:darelist_app/UI/pack.dart';
+import 'package:darelist_app/navigation/players_page.dart';
 import 'package:darelist_app/navigation/ui_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -76,6 +77,11 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
             PackListPage(),
           );
           break;
+        // case Pages.Players:
+        //   _pages.add(
+        //     PlayersPage(),
+        //   );
+        //   break;
         default:
           break;
       }
@@ -113,6 +119,12 @@ class DarelistRouterDelegate extends RouterDelegate<PageConfiguration>
   //test if we can push a pack page to override animation
   void pushPack(Pack pack) {
     _pages.add(PackPage(pack));
+    notifyListeners();
+  }
+
+  //these all could be one function
+  void pushPlayers() {
+    _pages.add(PlayersPage());
     notifyListeners();
   }
 

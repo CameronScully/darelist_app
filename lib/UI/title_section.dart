@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TitleSection extends StatelessWidget {
+  String title;
+
+  TitleSection(this.title);
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).orientation == Orientation.landscape
@@ -10,7 +14,7 @@ class TitleSection extends StatelessWidget {
     return Stack(
       children: [
         Text(
-          "Dare List",
+          title,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Lobster',
@@ -22,7 +26,7 @@ class TitleSection extends StatelessWidget {
           ),
         ),
         Text(
-          "Dare List",
+          title,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,

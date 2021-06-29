@@ -19,6 +19,8 @@ class PackRouteInformationParser
         return PackListPageConfig;
       case PackPath:
         return PackPageConfig;
+      case PlayersPath:
+        return PlayersPageConfig;
       default:
         return PackListPageConfig;
     }
@@ -31,6 +33,8 @@ class PackRouteInformationParser
         return const RouteInformation(location: PackListPath);
       case Pages.Pack:
         return const RouteInformation(location: PackPath);
+      case Pages.Players:
+        return const RouteInformation(location: PlayersPath);
       default:
         return const RouteInformation(location: PackListPath);
     }
