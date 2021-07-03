@@ -16,7 +16,7 @@ class DareWidget extends StatelessWidget {
     return Container(
         margin: EdgeInsets.all(width * 0.04),
         decoration: BoxDecoration(
-          color: Theme.of(context).cardColor,
+          color: Theme.of(context).primaryColor,
           borderRadius: new BorderRadius.all(Radius.circular(20.0)),
           border: Border.all(
             color: Colors.white,
@@ -32,7 +32,10 @@ class DareWidget extends StatelessWidget {
                   dareText,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Theme.of(context).primaryColor.computeLuminance() >
+                              0.5
+                          ? Colors.black
+                          : Colors.white,
                       fontFamily: 'Lobster',
                       fontSize: width * 0.04),
                 )),
@@ -45,8 +48,11 @@ class DareWidget extends StatelessWidget {
                 },
                 child: Text('PASS'),
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
-                    onPrimary: Colors.black,
+                    primary: Theme.of(context).accentColor,
+                    onPrimary:
+                        Theme.of(context).accentColor.computeLuminance() > 0.5
+                            ? Colors.black
+                            : Colors.white,
                     textStyle: TextStyle(
                         fontSize: width * 0.04, fontFamily: 'Lobster')),
               ),
@@ -58,8 +64,11 @@ class DareWidget extends StatelessWidget {
                 },
                 child: Text('FAIL'),
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.red,
-                    onPrimary: Colors.black,
+                    primary: Theme.of(context).accentColor,
+                    onPrimary:
+                        Theme.of(context).accentColor.computeLuminance() > 0.5
+                            ? Colors.black
+                            : Colors.white,
                     textStyle: TextStyle(
                         fontSize: width * 0.04, fontFamily: 'Lobster')),
               )

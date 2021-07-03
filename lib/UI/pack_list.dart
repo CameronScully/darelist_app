@@ -37,12 +37,16 @@ class PackList extends StatelessWidget {
                 backgroundColor: Colors.transparent,
                 shadowColor: Colors.transparent,
                 centerTitle: true,
-                toolbarHeight: MediaQuery.of(context).size.height * 0.25,
+                toolbarHeight: MediaQuery.of(context).size.height * 0.2,
               ),
               Container(
-                padding: EdgeInsets.only(bottom: width * 0.04),
+                margin: EdgeInsets.only(bottom: width * 0.04),
                 child: IconButton(
-                  icon: Icon(Icons.person_add, size: 40, color: Colors.white),
+                  icon: Icon(
+                    Icons.person_add,
+                    size: 40,
+                    color: Theme.of(context).primaryColor,
+                  ),
                   onPressed: () => delegate.pushPlayers(),
                 ),
               ),

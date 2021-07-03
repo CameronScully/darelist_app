@@ -16,7 +16,7 @@ class VersusWidget extends StatelessWidget {
     return Container(
         margin: EdgeInsets.all(width * 0.04),
         decoration: BoxDecoration(
-          color: Theme.of(context).cardColor,
+          color: Theme.of(context).primaryColor,
           borderRadius: new BorderRadius.all(Radius.circular(20.0)),
           border: Border.all(
             color: Colors.white,
@@ -33,7 +33,7 @@ class VersusWidget extends StatelessWidget {
                         margin: const EdgeInsets.only(
                             top: 20, left: 20, right: 20, bottom: 10),
                         decoration: BoxDecoration(
-                          color: Colors.green,
+                          color: Theme.of(context).cardColor,
                           borderRadius:
                               new BorderRadius.all(Radius.circular(20.0)),
                         ),
@@ -42,7 +42,12 @@ class VersusWidget extends StatelessWidget {
                           judge,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context)
+                                          .cardColor
+                                          .computeLuminance() >
+                                      0.5
+                                  ? Colors.black
+                                  : Colors.white,
                               fontFamily: 'Lobster',
                               fontSize: width * 0.04),
                         )))),
@@ -51,7 +56,7 @@ class VersusWidget extends StatelessWidget {
                         margin: const EdgeInsets.only(
                             bottom: 20, left: 20, right: 20, top: 10),
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: Theme.of(context).cardColor,
                           borderRadius:
                               new BorderRadius.all(Radius.circular(20.0)),
                         ),
@@ -60,7 +65,12 @@ class VersusWidget extends StatelessWidget {
                           player,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context)
+                                          .cardColor
+                                          .computeLuminance() >
+                                      0.5
+                                  ? Colors.black
+                                  : Colors.white,
                               fontFamily: 'Lobster',
                               fontSize: width * 0.04),
                         )))),
@@ -81,7 +91,12 @@ class VersusWidget extends StatelessWidget {
                         "VS",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Theme.of(context)
+                                        .primaryColor
+                                        .computeLuminance() >
+                                    0.5
+                                ? Colors.black
+                                : Colors.white,
                             fontFamily: 'Lobster',
                             fontSize: width * 0.04),
                       )),

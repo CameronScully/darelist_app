@@ -7,12 +7,10 @@ import 'package:darelist_app/bloc/darelist_bloc.dart';
 import 'package:darelist_app/bloc/player_bloc.dart';
 import 'package:darelist_app/model/dare.dart';
 import 'package:darelist_app/model/player.dart';
-import 'package:darelist_app/navigation/darelist_router_delegate.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 
 import 'background.dart';
-import 'package:get/get.dart';
 
 class Pack extends StatelessWidget {
   final String name;
@@ -30,12 +28,6 @@ class Pack extends StatelessWidget {
     playerBloc.getPlayers();
     var rng = new Random();
 
-    final width = MediaQuery.of(context).orientation == Orientation.landscape
-        ? MediaQuery.of(context).size.width
-        : MediaQuery.of(context).size.height;
-
-    final delegate = Get.find<DarelistRouterDelegate>();
-
     return Stack(
       children: [
         Container(
@@ -46,7 +38,7 @@ class Pack extends StatelessWidget {
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
               centerTitle: true,
-              toolbarHeight: MediaQuery.of(context).size.height * 0.25,
+              toolbarHeight: MediaQuery.of(context).size.height * 0.2,
               leading: IconButton(
                 icon: Icon(Icons.arrow_back_rounded, size: 40),
                 onPressed: () => Navigator.of(context).pop(),
@@ -74,7 +66,7 @@ class Pack extends StatelessWidget {
                             if (snapshot2.data.length == 0) {
                               player = Player(name: "Player");
                               judge = Player(name: "Judge");
-                            } else if (snapshot2.data.length == 0) {
+                            } else if (snapshot2.data.length == 1) {
                               player =
                                   snapshot2.data[index % snapshot2.data.length];
                               judge = Player(name: "Judge");

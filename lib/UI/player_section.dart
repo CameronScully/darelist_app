@@ -15,12 +15,13 @@ class PlayerSection extends StatelessWidget {
     final width = MediaQuery.of(context).orientation == Orientation.landscape
         ? MediaQuery.of(context).size.width
         : MediaQuery.of(context).size.height;
-
+    myController.selection = TextSelection.fromPosition(
+        TextPosition(offset: myController.text.length));
     return Container(
       margin: EdgeInsets.all(width * 0.01),
       padding: EdgeInsets.all(width * 0.01),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(context).primaryColor,
         borderRadius: new BorderRadius.all(Radius.circular(20.0)),
         border: Border.all(
           color: Colors.white,
@@ -34,25 +35,24 @@ class PlayerSection extends StatelessWidget {
           Expanded(
               child: Focus(
             child: TextField(
-              controller: myController,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Lobster',
-                  fontSize: width * 0.04),
-              decoration: new InputDecoration(
-                border: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                disabledBorder: InputBorder.none,
-              ),
-              onEditingComplete: () {
-                player.name = myController.text;
-                playerBloc.updatePlayer(player);
-                FocusScope.of(context).nextFocus();
-              },
-            ),
+                controller: myController,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Lobster',
+                    fontSize: width * 0.04),
+                decoration: new InputDecoration(
+                  border: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  disabledBorder: InputBorder.none,
+                ),
+                onEditingComplete: () {
+                  player.name = myController.text;
+                  playerBloc.updatePlayer(player);
+                },
+                onSubmitted: (_) => FocusScope.of(context).unfocus()),
             canRequestFocus: false,
             onFocusChange: (hasFocus) {
               if (!hasFocus) {

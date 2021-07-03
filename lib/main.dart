@@ -1,4 +1,6 @@
+import 'package:darelist_app/themes/custom_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -7,7 +9,9 @@ import 'navigation/pack_route_information_parser.dart';
 import 'navigation/ui_pages.dart';
 
 void main() async {
-  runApp(DarelistApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(DarelistApp()));
 }
 
 class DarelistApp extends StatefulWidget {
@@ -27,14 +31,9 @@ class _DarelistAppState extends State<DarelistApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerDelegate: delegate,
-      routeInformationParser: parser,
-      theme: ThemeData(
-        backgroundColor: Color(0xFFFF2E63),
-        primaryColor: Color(0xFF08D9D6),
-        cardColor: Color(0xFF252A34),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        routerDelegate: delegate,
+        routeInformationParser: parser,
+        theme: CustomTheme.Theme);
   }
 }

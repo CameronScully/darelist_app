@@ -26,7 +26,7 @@ class PackSection extends StatelessWidget {
           left: width * 0.04, right: width * 0.04, bottom: width * 0.04),
       height: width * 0.20,
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(context).primaryColor,
         borderRadius: new BorderRadius.all(Radius.circular(20.0)),
         border: Border.all(
           color: Colors.white,
@@ -62,7 +62,10 @@ class PackSection extends StatelessWidget {
                 packName,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Colors.white,
+                    color:
+                        Theme.of(context).primaryColor.computeLuminance() > 0.5
+                            ? Colors.black
+                            : Colors.white,
                     fontFamily: 'Lobster',
                     fontSize: width * 0.04),
               ),
