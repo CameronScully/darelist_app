@@ -32,11 +32,11 @@ class DareWidget extends StatelessWidget {
                   dareText,
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                      fontFamily: 'Quicksand',
                       color: Theme.of(context).primaryColor.computeLuminance() >
                               0.5
                           ? Colors.black
                           : Colors.white,
-                      fontFamily: 'Lobster',
                       fontSize: width * 0.04),
                 )),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
@@ -46,8 +46,9 @@ class DareWidget extends StatelessWidget {
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                 },
-                child: Text('PASS'),
+                child: Text('Pass'),
                 style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     primary: Theme.of(context).accentColor,
                     onPrimary:
                         Theme.of(context).accentColor.computeLuminance() > 0.5
@@ -62,8 +63,9 @@ class DareWidget extends StatelessWidget {
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                 },
-                child: Text('FAIL'),
+                child: Text('Fail'),
                 style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     primary: Theme.of(context).accentColor,
                     onPrimary:
                         Theme.of(context).accentColor.computeLuminance() > 0.5

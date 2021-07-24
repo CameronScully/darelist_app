@@ -41,13 +41,17 @@ class PackList extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(bottom: width * 0.04),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.person_add,
-                    size: 40,
-                    color: Theme.of(context).primaryColor,
-                  ),
+                child: RawMaterialButton(
                   onPressed: () => delegate.pushPlayers(),
+                  elevation: 2.0,
+                  fillColor: Theme.of(context).primaryColor,
+                  child: Icon(
+                    Icons.person_add,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                  padding: EdgeInsets.all(7),
+                  shape: CircleBorder(),
                 ),
               ),
               for (var pack in packs)

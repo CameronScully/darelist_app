@@ -15,27 +15,23 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 2.0.0
+version: 2.0.1+6
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flip_card: ^0.5.0
-
   flutter:
     sdk: flutter
-
   sqflite:
   path:
-
   geopattern_flutter:
     git:
       url: git://github.com/suyash/geopattern
       ref: master
 
   crypto: ^2.1.5
-
   get:
 
   # The following adds the Cupertino Icons font to your application.
@@ -49,9 +45,11 @@ dev_dependencies:
     sdk: flutter
 
 flutter_icons:
-  android: false
-  ios: true
   image_path: "assets/icon/icon.png"
+  android: true
+  ios: true
+  adaptive_icon_background: "assets/icon/icon_background.png"
+  adaptive_icon_foreground: "assets/icon/chilli.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -102,6 +100,9 @@ flutter:
     - family: Lobster
       fonts:
         - asset: assets/fonts/Lobster.otf
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand.ttf
     - family: RanchersRegular
       fonts:
         - asset: assets/fonts/Ranchers-Regular.ttf

@@ -34,7 +34,7 @@ class Players extends StatelessWidget {
               body: ListView(
                 children: [
                   AppBar(
-                      title: TitleSection("Players"),
+                      title: TitleSection("+ Players"),
                       backgroundColor: Colors.transparent,
                       shadowColor: Colors.transparent,
                       centerTitle: true,
